@@ -1,0 +1,119 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Pulse animation for background orb */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Spin animation for loading */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-bounce,
+  .animate-spin,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid #FF7A00;
+  outline-offset: 2px;
+}
+
+/* Custom cursor on interactive elements */
+button,
+a,
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Smooth image loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[loading] {
+  opacity: 0;
+}
+
+/* Glass effect for cards */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text shadow for better readability */
+.text-shadow {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Orange border gradient */
+.orange-border-gradient {
+  position: relative;
+}
+
+.orange-border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #FF7A00, #ff9933);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  border-radius: inherit;
+  pointer-events: none;
+}
