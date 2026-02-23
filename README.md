@@ -22,6 +22,8 @@ To run the project locally:
 npm install
 npm run dev
 ```
+## Live Demo:
+https://personal-portfolio-rho-one-31.vercel.app
 
 ## License
 This project is open source and available under the MIT License.
