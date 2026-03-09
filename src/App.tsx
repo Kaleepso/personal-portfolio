@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/sections/Hero';
 import { About } from '@/sections/About';
@@ -50,6 +51,9 @@ function App() {
       
       {/* Footer */}
       <Footer />
+      
+      {/* Speed Insights */}
+      <SpeedInsights />
     </div>
   );
 }
